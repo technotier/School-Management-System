@@ -6,5 +6,8 @@ admin.site.register(StudentClassInfo)
 admin.site.register(StudentSectionInfo)
 admin.site.register(StudentShiftInfo)
 admin.site.register(StudentInfo)
-admin.site.register(Attendance)
+
+class AttendanceAdmin(admin.ModelAdmin):
+    list_display = ['student', 'status', 'date']
+admin.site.register(Attendance, AttendanceAdmin)
 
